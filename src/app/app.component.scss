@@ -1,3 +1,26 @@
+.begin-button {
+  margin-left: 50%;
+  margin-top: 50%;
+  background-color: gray;
+  border: 0;
+  border-radius: 5%;
+  font-size: 2em;
+  box-shadow: 3px 3px 4px red;
+}
+.fade-out {
+  animation-duration: 2s;
+  animation-name: fadeout;
+}
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
 .text-hide {
   visibility: hidden;
 }

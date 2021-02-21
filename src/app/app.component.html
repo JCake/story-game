@@ -1,4 +1,5 @@
 <div class="screen">
-  <p [ngClass]="{'text-show': line === 1}">You are asleep.</p>
+  <button (click)="begin()" class="begin-button" [ngClass]="{'fade-out': line === 0, 'text-hide': !startScreen}" *ngIf="startScreen">BEGIN</button>
+  <p [ngClass]="{'text-show': line === 1, 'text-hide': line < 1}">You are asleep.</p>
   <p [ngClass]="{'text-show': line === 2, 'text-hide': line < 2}">You have no control.</p>
 </div>

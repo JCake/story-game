@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'story-game';
-  line = 1;
+  startScreen = true;
+  line = -1;
 
   ngOnInit(){
-    setTimeout(() => this.line++, 4000);
+    
+  }
+
+  begin(){
+    this.line = 0;
+    setTimeout(() => this.startScreen = false, 1800);
+    setTimeout(() => this.line = 1, 2500);
+    setTimeout(() => this.line = 2, 6500);
   }
 }
