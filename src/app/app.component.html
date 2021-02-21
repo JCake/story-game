@@ -1,0 +1,4 @@
+<div class="screen">
+  <p [ngClass]="{'text-show': line === 1}">You are asleep.</p>
+  <p [ngClass]="{'text-show': line === 2, 'text-hide': line < 2}">You have no control.</p>
+</div>
