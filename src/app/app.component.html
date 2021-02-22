@@ -1,5 +1,15 @@
 <div class="screen">
   <button (click)="begin()" class="begin-button" [ngClass]="{'fade-out': line === 0, 'text-hide': !startScreen}" *ngIf="startScreen">BEGIN</button>
   <p [ngClass]="{'text-show': line === 1, 'text-hide': line < 1}">You are asleep.</p>
-  <p [ngClass]="{'text-show': line === 2, 'text-hide': line < 2}">You have no control.</p>
+  <p [ngClass]="{'text-show': line === 2, 'text-hide': line < 2}">You have {{amtOfControl}} control.</p>
+  <div *ngFor="let response of responses">
+    {{response}}
+  </div>
+  <div class="prompt-section" [ngClass]="{'prompt-chosen': doneSelecting}">
+    <div class="prompt" *ngIf="prompt">{{prompt}}</div>
+    <div class="options" *ngIf="options && options.length">
+      <button *ngFor="let option of options" (click)="selected(option)">{{option}}</button>
+    </div>
+  </div>
+
 </div>
